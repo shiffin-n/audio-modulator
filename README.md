@@ -2,6 +2,9 @@ Audio Modulator:
 		This application allows you to modulate the audio into chipmunk or robotic voices.
 
 How to use:
+		-Start the server using the command 'python -m SimpleHTTPServer'.
+
+		
 		-If you want chipmunk's voice click on the chipmunk's image
 		-If you want the robotic voice click on the robot's image
 		-Add the song name(which are already there in the server) in the input form and click 'submit'.

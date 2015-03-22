@@ -1,15 +1,13 @@
 html {
-   margin: 0px;
-   height: 100%;
-   width: 100%;
-
+  margin: 0px;
+  height: 100%;
+  width: 100%;
 }
 
 body {
-
-   margin: 0px;
-   min-height: 100%;
-   width: 100%;
+  margin: 0px;
+  min-height: 100%;
+  width: 100%;
 }
 .play{
   background-color: #164361; 
@@ -19,21 +17,18 @@ body {
   background-color: #164361;
 }
 #core-header {
-  	flex:1;
-    /*line-height: 40px;*/
-    font-size: 35px;
-    background: linear-gradient(#164361, #306284);
-    font-family: 'Gochi Hand', cursive;
-    color: #FFF;
-    width: 100%;
+  flex:1;   
+  font-size: 35px;
+  background: linear-gradient(#164361, #306284);
+  font-family: 'Gochi Hand', cursive;
+  color: #FFF;
+  width: 100%;
 }
-
 #main{
 	width: 100%;
-    height: 1024px;
-    display: flex;
-    flex-direction: column;
-    
+  height: 1024px;
+  display: flex;
+  flex-direction: column;    
 }
 #f1{
 	flex:6;
@@ -49,7 +44,6 @@ body {
 
 #f11{
 	flex:1;
-
 }
 #f12{
 	flex:1;
