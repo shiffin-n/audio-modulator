@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>DecodeAudioData </title>
+    <link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="stylesheet" type="text/css" href="cr.css">
+  </head>
+  
+ 	<body>
+		<div id="core-header">
+                	<center>AUDIO CONVERTER</center>
+    </div>
+		
+    <div id="main">
+		  <div id="f1">
+			  	  <div id="f11">
+			  		 <a href="#f2"><img src="alvin.jpg" onclick="chipmunk()" /></a>
+			  	  </div>
+            <div id="f12">
+          		<a href="#f2"><img src="robot.jpg" onclick="robot()"/></a>
+            </div>
+		  </div>
+
+		  <div id="f2">
+        <div id="inner">
+				  <form id="form" onsubmit="return false;">
+
+            <div >
+              <mark>Song :</mark><input style="position:relative; top:50%; left:1%; width:30%;" type="text" id="userInput"/>
+            </div>
+          	<div > 
+              <input style="position:relative; top:100%; left:7.3%; width:28%;" type="submit"  onclick="othername();" />
+          	</div>
+     			</form>
+     		 <paper-button raised  class="play">Play</paper-button>
+     		 <paper-button raised  class="stop">Stop</paper-button>
+			  </div>
+		  </div>
+    </div>
+
+	<script type="text/javascript">
+	     var a,value=1;
+      function robot(){
+
+      value=0.55;
+      }
+      function othername() {
+          a = document.getElementById("userInput").value;
+              
+          }
+       function chipmunk(){
+        value=1.37;
+         }
+      // define variables
+
+      var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      var source;
+      var songLength;
+
+      var play = document.querySelector('.play');
+      var stop = document.querySelector('.stop');
+
+
+      function getData() {
+        source = audioCtx.createBufferSource();
+        request = new XMLHttpRequest();
+        request.open('GET', a, true);
+        request.responseType = 'arraybuffer';
+
+        request.onload = function() {
+          var audioData = request.response;
+
+          audioCtx.decodeAudioData(audioData, function(buffer) {
+              myBuffer = buffer;
+              songLength = buffer.duration;
+              source.buffer = myBuffer;
+              source.playbackRate.value = value;
+              source.connect(audioCtx.destination);
+              source.loop = false;
+            },
+            function(e){"Error with decoding audio data" + e.err});
+        }
+        request.send();
+      }
+      // wire up buttons to stop and play audio, and range slider control
+      play.onclick = function() {
+        getData();
+        source.start(0);
+        play.setAttribute('disabled', 'disabled');
+        
+         
+  
+        source.playbackRate.value = value;
+         play.removeAttribute('disabled');
+      }
+
+      stop.onclick = function() {
+        source.stop(0);
+        play.removeAttribute('disabled');    
+       
+      }
+      
+  </script>  
+  </body>
+</html>

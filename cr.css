@@ -1,0 +1,67 @@
+html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+
+}
+
+body {
+
+   margin: 0px;
+   min-height: 100%;
+   width: 100%;
+}
+.play{
+  background-color: #164361; 
+  margin-left: 10%;
+}
+.stop{
+  background-color: #164361;
+}
+#core-header {
+  	flex:1;
+    /*line-height: 40px;*/
+    font-size: 35px;
+    background: linear-gradient(#164361, #306284);
+    font-family: 'Gochi Hand', cursive;
+    color: #FFF;
+    width: 100%;
+}
+
+#main{
+	width: 100%;
+    height: 1024px;
+    display: flex;
+    flex-direction: column;
+    
+}
+#f1{
+	flex:6;
+	display:flex;
+}
+#hi{
+	display:none;
+}
+#f2{
+	flex:4;
+	background: url(bg.jpg) no-repeat;
+}
+
+#f11{
+	flex:1;
+
+}
+#f12{
+	flex:1;
+}
+img{
+	width:100%;
+	height:610px;
+}
+mark{
+  background-color: #164361;
+}
+#inner{
+  margin-left: 35%;
+  padding-top: 2cm;
+}
